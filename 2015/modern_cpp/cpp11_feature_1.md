@@ -1,5 +1,5 @@
 # 2015.01.12
-## Static assert
+## static_assert
 - http://msdn.microsoft.com/ko-kr/library/dd293588.aspx
 - 컴파일 단계에서 Assertion 테스트 수행.
 - 지정된 식이 False일 경우, 에러와 함께 컴파일 중단.
@@ -15,6 +15,11 @@ static_assert(constant-expression, string-literal);
 static
 ```
 
-## Auto
+## auto
+- 타입을 추론하는 선언 지정자.
+- 초기화 식의 타입이 변화하는 경우 바로 동작 및 보장함.
+- 타입 이름의 오타를 걱정 할 필요 없어서 효율적으로 코딩 가능.
+- 명확한 초기화 식이 아닐 땐, auto를 사용하지 말자.
+
 
 ## Trailing return types
