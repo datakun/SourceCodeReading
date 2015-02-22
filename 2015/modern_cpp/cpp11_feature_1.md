@@ -15,8 +15,3 @@ static_assert(constant-expression, string-literal);
 int a = 10;
 static_assert(a > 10, "a is under then 10");
 ```
-
-## Auto
-- 
-
-## Trailing return types
