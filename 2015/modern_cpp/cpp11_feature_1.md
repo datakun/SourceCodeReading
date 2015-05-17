@@ -12,8 +12,10 @@ static_assert(constant-expression, string-literal);
 2. string-literal : 컴파일 실패시 표시할 메시지(컴파일러의 기본 문자 집합의 문자를 이용)
 
 ```cpp
-static
+int a = 10;
+static_assert(a > 10, "a is under then 10");
 ```
+<<<<<<< HEAD
 
 ## auto
 - 타입을 추론하는 선언 지정자.
@@ -23,3 +25,5 @@ static
 
 
 ## Trailing return types
+=======
+>>>>>>> 69a3be80bbba4d0fb6841ca4b92f3d6b1a4944bf
