@@ -37,3 +37,12 @@
     image: url(../Checkbox_checked_disabled.png);
   }
   ```
+- 마우스 휠을 이용하여 가로 스크롤바를 움직이고 싶다
+  ```
+  int x -= (event->delta() / 120) * 30;
+  if (x < 0)
+      x = 0;
+  else if (x > ui.scrollArea->horizontalScrollBar()->maximum())
+      x = ui.scrollArea->horizontalScrollBar()->maximum();
+  ui.scrollArea->horizontalScrollBar()->setValue(x);
+  ```
