@@ -37,6 +37,7 @@
     image: url(../Checkbox_checked_disabled.png);
   }
   ```
+  
 - 마우스 휠을 이용하여 가로 스크롤바를 움직이고 싶다
   - 다음 코드를 적용
   ```
@@ -46,4 +47,16 @@
   else if (x > ui.scrollArea->horizontalScrollBar()->maximum())
       x = ui.scrollArea->horizontalScrollBar()->maximum();
   ui.scrollArea->horizontalScrollBar()->setValue(x);
+  ```
+  
+- QtConcurrent로 비동기적으로 일을 한 뒤 뒤처리를 하고 싶다.
+  - 다음 코드를 적용
+  ```
+    QFutureWatcher<RxVideo::FrameData> *watcher = new QFutureWatcher<RxVideo::FrameData>();
+    connect(watcher, &QFutureWatcher<RxVideo::FrameData>::finished, [=]{
+        m_container->setLabelImage(index, watcher->result().frame);
+    });
+
+    QFuture<RxVideo::FrameData> future = QtConcurrent::run(m_video, &RxVideo::getFrame, m_stampList[index]);
+    watcher->setFuture(future);
   ```
