@@ -6,8 +6,8 @@
 #include "ClHelper.h"
 
 // TODO: 경로는 적절하게 변경
-static const char* INFILE  = "/Users/kimdata/SourceCodeReading/2015/OpenCL/OpenCL_02/OpenCL_02/input.bmp";
-static const char* OUTFILE = "/Users/kimdata/SourceCodeReading/2015/OpenCL/OpenCL_02/OpenCL_02/output.bmp";
+static const char* INFILE  = "/Users/kimdata/Pictures/input.bmp";
+static const char* OUTFILE = "/Users/kimdata/Pictures/output.bmp";
 
 static void
 binarizationWithOpenCLImage(unsigned char* srcData,
@@ -109,7 +109,7 @@ binarizationWithOpenCLImage(unsigned char* srcData,
 
 int main()
 {
-    bool isOpenCL = true;
+    bool isOpenCL = false;
     
     if (isOpenCL)
     {
